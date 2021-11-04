@@ -1,0 +1,399 @@
+/* ============================================================================================== 
+This copyright notice must be kept untouched in the stylesheet at all times.
+The original version of this stylesheet and the associated (x)html 
+is available at http://www.script-tutorials.com/whirling-dropdown-menu/
+Copyright (c) Script Tutorials. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any way to fit your requirements.
+================================================================================================= */
+.mybtn a {
+    margin-left:3px !important;
+}
+
+    header * {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  margin-top: 75px;
+  background-color: rgb(95, 155, 204);
+  border: 5px solid #f51f66;
+  
+   height: 1000px;
+}
+header .container {
+  /*margin: 30px auto;
+  width: 90%;*/
+}
+
+/* general styles */
+.menu,
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu {
+  height: 60px;
+}
+
+.menu li {
+  background: -moz-linear-gradient(#150e75, #092c77);
+  background: -ms-linear-gradient(#06122c, #092c77);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #06122c),
+    color-stop(100%, #092c77)
+  );
+  background: -webkit-linear-gradient(#06122c, #092c77);
+  background: -o-linear-gradient(#06122c, #092c77);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#06122c', endColorstr='#092c77');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#06122c', endColorstr='#092c77')";
+  background: linear-gradient(#06122c, #092c77);
+
+  border-bottom: 2px solid #181818;
+  border-top: 2px solid #6fb4d6;
+  min-width: 160px;
+}
+.menu > li {
+  display: block;
+  float: left;
+  position: relative;
+}
+.menu > li:first-child {
+  border-radius: 5px 0 0;
+}
+.menu a {
+  border-left: 3px solid rgba(0, 0, 0, 0);
+  color: #808080;
+  display: block;
+  font-family: "Lucida Console";
+  font-size: 18px;
+  line-height: 45px;
+  padding: 0 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  align-items: center;
+}
+.submenu a {
+  color: #cef0fa;
+  display: block;
+  line-height: 30px;
+  outline-width: 60px;
+  padding-top: 2px;
+  font-weight: bold;
+  font-size: 15px;
+  border-left: 2px solid rgba(0, 0, 0, 0);
+  color: #cef0fa;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* onhover styles */
+.menu li:hover {
+  background-color: #050536;
+  background: -moz-linear-gradient(#10111d, #151620);
+  background: -ms-linear-gradient(#10111d, #151620);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #10111d),
+    color-stop(100%, #151620)
+  );
+  background: -webkit-linear-gradient(#10111d, #151620);
+  background: -o-linear-gradient(#10111d, #151620);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#10111d', endColorstr='#151620');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#10111d', endColorstr='#151620')";
+  background: linear-gradient(#10111d, #151620);
+
+  border-bottom: 2px solid #121114;
+  border-top: 2px solid #151620;
+}
+.menu li:hover > a {
+  border-radius: 5px 0 0 0;
+  border-left: 3px solid #acd7dd;
+  color: #e5f508;
+}
+
+/* submenu styles */
+.submenu {
+  left: 0;
+  max-height: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 0;
+
+  -webkit-perspective: 400px;
+  -moz-perspective: 400px;
+  -ms-perspective: 400px;
+  -o-perspective: 400px;
+  perspective: 400px;
+}
+.submenu li {
+  opacity: 0;
+
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+
+  -webkit-transition: opacity 0.4s, -webkit-transform 0.5s;
+  -moz-transition: opacity 0.4s, -moz-transform 0.5s;
+  -ms-transition: opacity 0.4s, -ms-transform 0.5s;
+  -o-transition: opacity 0.4s, -o-transform 0.5s;
+  transition: opacity 0.4s, transform 0.5s;
+}
+.menu .submenu li:hover a {
+  border-left: 3px solid #454545;
+  border-radius: 0;
+  color: #f5fd83;
+}
+.menu > li:hover .submenu,
+.menu > li:focus .submenu {
+  max-height: 2000px;
+  z-index: 10;
+}
+.menu > li:hover .submenu li,
+.menu > li:focus .submenu li {
+  opacity: 1;
+
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+/* CSS3 delays for transition effects */
+.menu li:hover .submenu li:nth-child(1) {
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.menu li:hover .submenu li:nth-child(2) {
+  -webkit-transition-delay: 50ms;
+  -moz-transition-delay: 50ms;
+  -ms-transition-delay: 50ms;
+  -o-transition-delay: 50ms;
+  transition-delay: 50ms;
+}
+.menu li:hover .submenu li:nth-child(3) {
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  -ms-transition-delay: 100ms;
+  -o-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+.menu li:hover .submenu li:nth-child(4) {
+  -webkit-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  -ms-transition-delay: 150ms;
+  -o-transition-delay: 150ms;
+  transition-delay: 150ms;
+}
+.menu li:hover .submenu li:nth-child(5) {
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.menu li:hover .submenu li:nth-child(6) {
+  -webkit-transition-delay: 250ms;
+  -moz-transition-delay: 250ms;
+  -ms-transition-delay: 250ms;
+  -o-transition-delay: 250ms;
+  transition-delay: 250ms;
+}
+.menu li:hover .submenu li:nth-child(7) {
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  transition-delay: 300ms;
+}
+.menu li:hover .submenu li:nth-child(8) {
+  -webkit-transition-delay: 350ms;
+  -moz-transition-delay: 350ms;
+  -ms-transition-delay: 350ms;
+  -o-transition-delay: 350ms;
+  transition-delay: 350ms;
+}
+
+.submenu li:nth-child(1) {
+  -webkit-transition-delay: 350ms;
+  -moz-transition-delay: 350ms;
+  -ms-transition-delay: 350ms;
+  -o-transition-delay: 350ms;
+  transition-delay: 350ms;
+}
+.submenu li:nth-child(2) {
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  transition-delay: 300ms;
+}
+.submenu li:nth-child(3) {
+  -webkit-transition-delay: 250ms;
+  -moz-transition-delay: 250ms;
+  -ms-transition-delay: 250ms;
+  -o-transition-delay: 250ms;
+  transition-delay: 250ms;
+}
+.submenu li:nth-child(4) {
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.submenu li:nth-child(5) {
+  -webkit-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  -ms-transition-delay: 150ms;
+  -o-transition-delay: 150ms;
+  transition-delay: 150ms;
+}
+.submenu li:nth-child(6) {
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  -ms-transition-delay: 100ms;
+  -o-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+.submenu li:nth-child(7) {
+  -webkit-transition-delay: 50ms;
+  -moz-transition-delay: 50ms;
+  -ms-transition-delay: 50ms;
+  -o-transition-delay: 50ms;
+  transition-delay: 50ms;
+}
+.submenu li:nth-child(8) {
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.home {
+  background: rgba(13, 24, 231, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  color: #ffffff !important;
+}
+.home:hover{
+    /* background: rgb(126, 132, 252); */
+
+}
+.main-menu {
+  background: rgba(3, 10, 108, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(16.5px);
+  -webkit-backdrop-filter: blur(16.5px);
+  border-radius: 10px;
+}
+
+
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?woz4uf');
+    src:  url('fonts/icomoon.eot?woz4uf#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?woz4uf') format('truetype'),
+      url('fonts/icomoon.woff?woz4uf') format('woff'),
+      url('fonts/icomoon.svg?woz4uf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-home:before {
+    content: "\e900";
+  }
+  .icon-home3:before {
+    content: "\e902";
+  }
+  .icon-office:before {
+    content: "\e903";
+  }
+  .icon-book:before {
+    content: "\e91f";
+  }
+  .icon-users:before {
+    content: "\e972";
+  }
+  .icon-spinner9:before {
+    content: "\e982";
+  }
+  .icon-spinner10:before {
+    content: "\e983";
+  }
+  .icon-cog:before {
+    content: "\e994";
+  }
+  .icon-loop2:before {
+    content: "\ea2e";
+  }
+
+
+.navbar {
+    padding: 0 0;
+}
+
+
+header {
+     /* overflow: hidden; */
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+/*.navbar {
+    overflow: hidden;
+     position: fixed;
+    top: 0;
+    width: 100%;
+}*/
+/*
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        height:60px
+    }*/
+
+       

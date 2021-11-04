@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MainNavBar</title>
+    <link href="css/site.css">
+    <link href="css/NavCss.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header class="container" id="header-main" role="header-main">
+        <nav class="navbar">
+            <ul dir="rtl" class="menu">
+
+
+                <li><a class="navbar-brand home" asp-action="Index" asp-controller="Home" asp-area=""><span
+                            class="icon icon-home"></span> الرئيسية</a></li>
+
+                <li>
+                    <a class="main-menu" href="#s1"><span class="icon icon-spinner9"></span> الخطط الشهرية</a>
+                    <ul class="submenu">
+                        <li> <a href="~/MonthPlans/Index">كل الخطط الشهرية</a></li>
+                        <li> <a href="~/MonthPlans/Create">خطة شهرية جديد</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a class="main-menu" href="#s2"><span class="icon icon-book"></span> المدارس</a>
+                    <ul class="submenu">
+                        <li><a href="~/Schools/Index">كل المدارس</a></li>
+
+                        <li><a href="~/Schools/Create">مدرسة جديدة</a></li>
+
+
+                    </ul>
+                </li>
+                <li>
+                    <a class="main-menu" href="#s3"><span class="icon icon-office"></span> الشركات</a>
+                    <ul class="submenu">
+                        <li> <a href="~/Companys/Index">كل الشركات</a></li>
+                        <li> <a href="~/Companys/Create">شركة جديدة</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a class="main-menu" href="#s4"><span class="icon icon-cog"></span> إعدادات النظام</a>
+                    <ul class="submenu">
+                        <li><a href="~/General_Direct/Index">الإدارات التعليمية</a></li>
+                        <li><a href="#">كل المستخدمين</a></li>
+
+                    </ul>
+                </li>
+
+
+
+        </nav>
+    </header>
+</body>
+
+</html>
